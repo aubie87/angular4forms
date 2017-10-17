@@ -10,6 +10,7 @@ import { Employee } from './employee';
 export class AppComponent {
   title = 'app';
   private languages = ['English', 'Spanish', 'French'];
+  private paymentTypes = [{id: 'w2', value: 'W2'}, {id: '1099', value: '1099'}];
   private model = new Employee('Adam', 'Apple');
 
   lastNameToUpperCase(value: string) {
