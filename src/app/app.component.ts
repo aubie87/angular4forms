@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 
 import { Employee } from './employee';
+import { FormPosterService } from './services/form-poster.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +14,15 @@ export class AppComponent {
   private languages = ['English', 'Spanish', 'French'];
   private paymentTypes = [{id: 'w2', value: 'W2'}, {id: '1099', value: '1099'}];
   private model = new Employee('Adam', 'Apple');
+
+  constructor(private formPoster: FormPosterService) {
+
+  }
+
+  submitForm(form: NgForm) {
+    console.log('submitForm: ', form.value);
+    this.formPoster.postEmployeeForm(this.model);
+  }
 
   lastNameToUpperCase(value: string) {
     if (value.length > 0) {
