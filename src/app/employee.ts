@@ -9,4 +9,5 @@ export class Employee {
     public isFullTime = true;
     public paymentType = 'w2';
     public primaryLanguage = 'English';
+    public dateHired?: Date;
 }
